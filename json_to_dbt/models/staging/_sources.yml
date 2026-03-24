@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    database: RAW
+    schema: PUBLIC
+    tables:
+      - name: raw_events
+        columns:
+          - name: ID
+          - name: DATA
+      - name: raw_speakers
+        columns:
+          - name: ID
+          - name: EVENT_ID
+          - name: SPEAKER_DATA
+      - name: raw_sponsors
+        columns:
+          - name: ID
+          - name: EVENT_ID
+          - name: SPONSOR_DATA
+      - name: raw_tickets
+        columns:
+          - name: ID
+          - name: EVENT_ID
+          - name: TICKET_DATA

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_events_with_speakers
+    description: Events joined with their speakers
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+      - name: speaker_id
+        tests:
+          - not_null
+
+  - name: int_events_with_sponsors
+    description: Events joined with their sponsors
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+      - name: sponsor_id
+        tests:
+          - not_null

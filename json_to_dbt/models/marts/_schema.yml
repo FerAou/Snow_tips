@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_events
+    description: Dimension table for events
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+      - name: event_name
+        tests:
+          - not_null
+
+  - name: dim_speakers
+    description: Dimension table for speakers
+    columns:
+      - name: speaker_id
+        tests:
+          - not_null
+          - unique
+      - name: speaker_name
+        tests:
+          - not_null
+
+  - name: dim_sponsors
+    description: Dimension table for unique sponsors
+    columns:
+      - name: sponsor_name
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_tickets
+    description: Fact table for ticket pricing per event
+    columns:
+      - name: ticket_id
+        tests:
+          - not_null
+          - unique
+      - name: event_id
+        tests:
+          - not_null

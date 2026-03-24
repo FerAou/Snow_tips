@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: Flattened events from RAW_EVENTS VARIANT column
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+      - name: event_name
+        tests:
+          - not_null
+      - name: event_date
+        tests:
+          - not_null
+
+  - name: stg_speakers
+    description: Flattened speakers from RAW_SPEAKERS VARIANT column
+    columns:
+      - name: speaker_id
+        tests:
+          - not_null
+          - unique
+      - name: event_id
+        tests:
+          - not_null
+      - name: speaker_name
+        tests:
+          - not_null
+
+  - name: stg_sponsors
+    description: Flattened sponsors from RAW_SPONSORS VARIANT column
+    columns:
+      - name: sponsor_id
+        tests:
+          - not_null
+          - unique
+      - name: event_id
+        tests:
+          - not_null
+      - name: sponsor_name
+        tests:
+          - not_null
+
+  - name: stg_tickets
+    description: Flattened tickets from RAW_TICKETS VARIANT column
+    columns:
+      - name: ticket_id
+        tests:
+          - not_null
+          - unique
+      - name: event_id
+        tests:
+          - not_null
+
+  - name: stg_events_speakers
+    description: LATERAL FLATTEN of speakers array from RAW_EVENTS
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+      - name: speaker_name
+        tests:
+          - not_null
+
+  - name: stg_events_sponsors
+    description: LATERAL FLATTEN of sponsors array from RAW_EVENTS
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+      - name: sponsor_name
+        tests:
+          - not_null
