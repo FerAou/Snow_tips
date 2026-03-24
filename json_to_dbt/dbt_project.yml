@@ -1,0 +1,19 @@
+name: json_to_dbt
+version: 1.0.0
+config-version: 2
+profile: json_to_dbt
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+test-paths:
+  - tests
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+snapshot-paths:
+  - snapshots
+models:
+  json_to_dbt:
+    +materialized: view
