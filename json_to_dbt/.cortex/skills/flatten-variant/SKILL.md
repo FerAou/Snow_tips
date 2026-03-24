@@ -90,10 +90,10 @@ Use the existing project macros depending on the case:
 ) }}
 ```
 
-### Case 2: Arrays with sub-fields (`flatten_whoz_array` macro)
+### Case 2: Arrays with sub-fields (`flatten_array_test` macro)
 
 ```sql
-{{ flatten_whoz_array(
+{{ flatten_array_test(
     prefix='array_name',
     array_path='array_name',
     max_index=10,
@@ -270,10 +270,10 @@ models:
 
 ## Common Patterns
 
-### Pattern 1: Table with a single VARIANT column (Whoz/API type)
+### Pattern 1: Table with a single VARIANT column (API type)
 
 The table has an ID + a VARIANT column containing complex JSON with nested arrays.
-Use `flatten_whoz_array` for arrays and extract scalars manually.
+Use `flatten_array_test for arrays and extract scalars manually.
 
 ### Pattern 2: Table with a text JSON column
 
