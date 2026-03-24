@@ -25,7 +25,7 @@ A **skill** is a set of formalized tasks and rules designed to automate what was
 5. Create quality tests (`not_null`, `unique`)
 6. Run `dbt compile`, `dbt run`, `dbt test`
 
-This skill uses macros such as `flatten_json_column`, `flatten_napta_json`, `flatten_array`, `flatten_whoz_array` — all generated with Cortex Code.
+This skill uses macros such as `flatten_json_column`, `flatten_napta_json`, `flatten_array`, `flatten_array_test` — all generated with Cortex Code.
 
 ---
 
@@ -54,8 +54,8 @@ json_to_dbt/
 │   ├── flatten_json_column.sql                # Generic auto-detection
 │   ├── flatten_napta_json.sql                 # Configurable LATERAL FLATTEN
 │   ├── flatten_array.sql                      # Indexed arrays
-│   ├── flatten_whoz_json.sql                  # Whoz JSON
-│   └── flatten_whoz_array.sql                 # Whoz arrays
+│   ├── flatten_json.sql                  #  JSON
+│   └── flatten_array_test.sql                 #  arrays
 ├── models/
 │   ├── staging/                               # Views — VARIANT flattening
 │   │   ├── _sources.yml                       # RAW source declarations
@@ -317,7 +317,7 @@ Each layer has a `_schema.yml` file with `not_null` and `unique` tests on key co
 | `flatten_json_column` | Generic auto-detection of scalar, object, and array keys |
 | `flatten_napta_json` | Configurable LATERAL FLATTEN with scalars, nested, and arrays |
 | `flatten_array` | Indexed arrays with sub-fields |
-| `flatten_whoz_array` | Whoz arrays with sub-fields and configurable prefix |
+| `flatten_array_test` | arrays with sub-fields and configurable prefix |
 
 ---
 
